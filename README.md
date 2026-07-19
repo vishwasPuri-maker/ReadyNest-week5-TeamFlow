@@ -59,43 +59,6 @@ readyNest/
 
 See [docs/ER-DIAGRAM.md](docs/ER-DIAGRAM.md) for the database schema.
 
----
-
-## 🚀 Local Setup
-
-### Prerequisites
-- Node.js 18+
-- A PostgreSQL database (local or [Neon](https://neon.tech))
-
-### 1. Backend
-```bash
-cd backend
-cp .env.example .env        # fill in DATABASE_URL + secrets
-npm install
-npx prisma migrate deploy   # or: npx prisma migrate dev
-npm run seed                # optional demo data
-npm run dev                 # http://localhost:4000
-```
-
-### 2. Frontend
-```bash
-cd frontend
-npm install
-# .env.local -> NEXT_PUBLIC_API_URL=http://localhost:4000
-npm run dev                 # http://localhost:3000
-```
-
-### Demo accounts (after seeding)
-| Email | Password | Role | Org |
-|---|---|---|---|
-| admin@acme.com | password123 | ADMIN | Acme Inc |
-| member@acme.com | password123 | MEMBER | Acme Inc |
-| admin@globex.com | password123 | ADMIN | Globex Corp |
-
-> Log in as Acme, then as Globex, to see tenant isolation — neither org can see the other's data.
-
----
-
 ## 🔌 API Overview
 
 Base URL: `/api`
