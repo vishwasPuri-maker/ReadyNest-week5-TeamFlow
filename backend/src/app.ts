@@ -1,3 +1,4 @@
+import { Request, Response } from 'express';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -38,7 +39,7 @@ export function createApp() {
     }),
   );
 
-  app.get('/api/health', (_req, res) =>
+  app.get('/api/health', (_req: Request, res: Response) =>
     res.json({ success: true, status: 'ok', time: new Date().toISOString() }),
   );
 
